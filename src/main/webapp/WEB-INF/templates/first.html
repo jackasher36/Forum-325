@@ -1,74 +1,74 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>iPhone 主屏幕</title>
+  <title>Blog Layout</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f7;
-      margin: 0;
-      padding: 20px;
+      background-color: #f8f9fa;
     }
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    .container {
+      margin-top: 40px;
     }
-    .weather-widget {
-      text-align: left;
-    }
-    .app-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
-      margin-top: 20px;
-    }
-    .app {
+    .box {
+      border: 1px solid #007bff;
       text-align: center;
+      padding: 30px;
+      margin: 15px 0;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
     }
-    .app-icon {
-      width: 60px;
-      height: 60px;
-      margin-bottom: 8px;
+    .box:hover {
+      transform: translateY(-10px);
     }
-    .dock {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background-color: rgba(255, 255, 255, 0.7);
-      padding: 10px 0;
-      display: flex;
-      justify-content: space-around;
+    .welcome {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .welcome h2 {
+      font-size: 36px;
+      color: #343a40;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-<div class="header">
-  <div>12:19</div>
-  <div>Wi-Fi 5G 100%</div>
-</div>
-<div class="weather-widget">
-  <p>新都</p>
-  <p>29° Mostly Sunny</p>
-  <p>H31° L19°</p>
-</div>
-<div class="app-grid">
-  <!-- 应用图标 -->
-  <div class="app">
-    <img src="facetime-icon.png" alt="FaceTime" class="app-icon">
-    <p>FaceTime</p>
+<div class="container">
+  <div class="welcome">
+    <h2>Welcome to Our Website</h2>
   </div>
-  <!-- 更多应用图标 -->
-</div>
-<div class="dock">
-  <!-- 底部应用图标 -->
-  <div class="app">
-    <img src="phone-icon.png" alt="Phone" class="app-icon">
-    <p>电话</p>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="box"><a href="second.html"><h3>学生论坛</h3></a></div>
+    </div>
+    <div class="col-md-6">
+      <div class="box"><a href="second.html"><h3>学校公告</h3></a></div>
+    </div>
+
   </div>
-  <!-- 更多底部应用图标 -->
+  <div class="row">
+    <div class="col-md-6">
+      <div class="box"><a href="LostAndFound.html"><h3>失物招领</h3></a></div>
+    </div>
+    <div class="col-md-6">
+      <div class="box"><a href="trade.html"><h3>二手交易</h3></a></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="box"><a href="second.html"><h3>活动组织</h3></a></div>
+    </div>
+    <div class="col-md-6">
+      <div class="box"><a href="life.html"><h3>生活分享</h3></a></div>
+    </div>
+  </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
