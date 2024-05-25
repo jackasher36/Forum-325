@@ -63,15 +63,18 @@
         .header h1 {
             font-size: 56px;
             margin-bottom: 20px;
+            opacity: 0;
         }
         .header p {
             font-size: 18px;
             color: #ccc;
             max-width: 800px;
             margin: 0 auto;
+            opacity: 0;
         }
         .button-container {
             margin-top: 30px;
+            opacity: 0;
         }
         .button-container a {
             text-decoration: none;
@@ -88,8 +91,8 @@
         }
     </style>
 </head>
-<link rel="stylesheet" href="styles.css">
 <body>
+<link rel="stylesheet" href="styles.css">
 
 <header>
     <nav class="navbar">
@@ -111,13 +114,45 @@
 </header>
 
 <div class="header">
-    <h1>看看我们的网页有多棒</h1>
-    <p> 进入史上最优秀的学校集合网站.。</p>
-    <div class="button-container">
+    <h1 id="headline">看看我们的网页有多棒</h1>
+    <p id="subheadline">进入史上最优秀的学校集合网站。</p>
+    <div class="button-container" id="button-container">
         <a href="login.html">试试</a>
     </div>
 </div>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Helper function to animate text appearance
+        function animateText(element, delay) {
+            const text = element.innerText;
+            element.innerText = '';
+            element.style.opacity = 1;
+
+            text.split('').forEach((char, index) => {
+                setTimeout(() => {
+                    element.innerText += char;
+                }, delay * index);
+            });
+        }
+
+        // Animate headline
+        const headline = document.getElementById('headline');
+        animateText(headline, 100);
+
+        // Animate subheadline after headline
+        setTimeout(() => {
+            const subheadline = document.getElementById('subheadline');
+            animateText(subheadline, 50);
+        }, headline.innerText.length * 100 + 500);
+
+        // Show button after subheadline
+        setTimeout(() => {
+            const buttonContainer = document.getElementById('button-container');
+            buttonContainer.style.opacity = 1;
+        }, (headline.innerText.length * 100) + (document.getElementById('subheadline').innerText.length * 50) + 1000);
+    });
+</script>
 
 </body>
 </html>
